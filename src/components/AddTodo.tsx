@@ -54,7 +54,10 @@ const AddTodo:React.FC<IAddTodo> = ({addTodo}) => {
             flex: 1,
             "& .MuiOutlinedInput-root": {
               borderRadius: 2,
-              backgroundColor: "#fff",
+              backgroundColor: "white",
+              color:"white",
+              border:"1px solid darkblue",
+              outline:"none"
             },
           }}
         />
@@ -67,6 +70,7 @@ const AddTodo:React.FC<IAddTodo> = ({addTodo}) => {
             borderRadius: 2,
             fontWeight: "bold",
             textTransform: "none",
+            color:"white"
           }}>SAVE</Button>
       </Box>
     </Paper>

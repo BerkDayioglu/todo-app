@@ -3,14 +3,14 @@ import TodoListItems from "./TodoListItems";
 
 interface ITodoList {
   todos: ITodo[];
-  toggleTodo:ToggleFn,
-  deleteTodo:DeleteFn
+  toggleTodo: ToggleFn;
+  deleteTodo: DeleteFn;
 }
 
-const TodoList:React.FC<ITodoList>= ({todos,toggleTodo,deleteTodo}) => {
-    console.log("todos",todos)
-    const inProgress=todos.filter((todo)=>todo.isDone===false)
-    const completed=todos.filter((todo)=>todo.isDone===true)
+const TodoList: React.FC<ITodoList> = ({ todos, toggleTodo, deleteTodo }) => {
+  console.log("todos", todos);
+  const inProgress = todos.filter((todo) => todo.isDone === false);
+  const completed = todos.filter((todo) => todo.isDone === true);
 
   return (
     <Grid
@@ -28,11 +28,11 @@ const TodoList:React.FC<ITodoList>= ({todos,toggleTodo,deleteTodo}) => {
         sm={10}
         md={5}
         sx={{
-          margin:"1rem",
+          margin: "1rem",
           minHeight: "350px",
           maxHeight: "350px",
           overflow: "auto",
-          border: "1px solid purple",
+          border: "4px solid darkblue",
           borderRadius: "0.5rem",
           boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
           p: 2,
@@ -42,18 +42,26 @@ const TodoList:React.FC<ITodoList>= ({todos,toggleTodo,deleteTodo}) => {
           },
         }}
       >
-             <Typography color="secondary" align="center" variant="h5" sx={{ mb: 1 }}>
+        <Typography
+          color="secondary"
+          align="center"
+          variant="h5"
+          sx={{ mb: 1, color: "white" }}
+        >
           In Progress Todos
         </Typography>
-        {
-            inProgress.length ? (
-                inProgress.map((todo)=>(
-                 <TodoListItems  key={todo.id} todo={todo} toggleTodo={toggleTodo}  deleteTodo={deleteTodo} />
-                ))
-            ) :(
-                <Typography> No Task</Typography>
-            ) 
-        }
+        {inProgress.length ? (
+          inProgress.map((todo) => (
+            <TodoListItems
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          ))
+        ) : (
+          <Typography> No Task</Typography>
+        )}
       </Grid>
       <Grid
         item
@@ -61,11 +69,11 @@ const TodoList:React.FC<ITodoList>= ({todos,toggleTodo,deleteTodo}) => {
         sm={10}
         md={5}
         sx={{
-          margin:"1rem",
+          margin: "1rem",
           minHeight: "350px",
           maxHeight: "350px",
           overflow: "auto",
-          border: "1px solid purple",
+          border: "4px solid yellow",
           borderRadius: "0.5rem",
           boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
           p: 2,
@@ -75,21 +83,28 @@ const TodoList:React.FC<ITodoList>= ({todos,toggleTodo,deleteTodo}) => {
           },
         }}
       >
-             <Typography color="secondary" align="center" variant="h5" sx={{ mb: 1 }}>
+        <Typography
+          color="secondary"
+          align="center"
+          variant="h5"
+          sx={{ mb: 1, color: "white" }}
+        >
           Completed Todos
         </Typography>
-        {
-            completed.length ? (
-                completed.map((todo)=>(
-                  <TodoListItems  key={todo.id} todo={todo} toggleTodo={toggleTodo}  deleteTodo={deleteTodo} />
-
-                ))
-            ) :(
-                <Typography> No Task</Typography>
-            ) 
-        }
+        {completed.length ? (
+          completed.map((todo) => (
+            <TodoListItems
+              key={todo.id}
+              todo={todo}
+              toggleTodo={toggleTodo}
+              deleteTodo={deleteTodo}
+            />
+          ))
+        ) : (
+          <Typography> No Task</Typography>
+        )}
       </Grid>
-      </Grid>
+    </Grid>
   );
 };
 

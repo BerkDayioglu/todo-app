@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material"
+import { colors, Typography } from "@mui/material"
 
 
 const Header = () => {
@@ -8,7 +8,7 @@ const Header = () => {
     variant="h2"
     align="center"
     sx={{
-          background: "linear-gradient(90deg, #ff416c, #ff4b2b)",
+        background: "linear-gradient(90deg, #ffffff, #ffffff)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         fontWeight: "bold",
@@ -16,7 +16,7 @@ const Header = () => {
         padding: "1rem",
         marginBottom: "1.5rem",
     }}>
-        Todo App With TypeScript
+      Todo App With TypeScript
     </Typography>
   )
 }

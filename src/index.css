@@ -28,6 +28,12 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url(./images/thumb-1920-986733.jpg);
+  width: 100vw; /* Tüm genişliği kaplar */
+  height: 100vh; /* Tüm yüksekliği kaplar */
+  background-size: cover; /* Resmi ekranı kaplayacak şekilde ölçekler */
+  background-position: center; /* Resmi tam ortaya hizalar */
+  background-repeat: no-repeat; /* Tekrar etmeyi önler */
 }
 
 h1 {
@@ -66,3 +72,5 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+

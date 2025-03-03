@@ -55,7 +55,6 @@ const AddTodo:React.FC<IAddTodo> = ({addTodo}) => {
             "& .MuiOutlinedInput-root": {
               borderRadius: 2,
               backgroundColor: "white",
-              color:"white",
               border:"1px solid darkblue",
               outline:"none"
             },
